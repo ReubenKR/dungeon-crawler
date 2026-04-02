@@ -35,7 +35,7 @@ public class Item {
    
    public String toString() {
       // TODO: Build a descriptive String for use by other methods
-      String description = "";
-      return description;
+      
+      return itemType;
    }
 }

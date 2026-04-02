@@ -8,17 +8,38 @@ public class Room {
    
    public Room() {
       // TODO: Generate a random number of monsters and items between 1 and max (inclusive)
-      
+      int numItems = (int) ((Math.random()*maxNumberOfItems)+1);
+      int numMonsters = (int) ((Math.random()*maxNumberOfMonsters)+1);
       // TODO: Create the ArrayLists to hold the Items and Monsters in the Room and populate them with Monsters and Items
-      
+      itemsInRoom = new ArrayList<Item>(numItems);
+      monstersInRoom = new ArrayList<Monster>(numMonsters);
+      for (int i = 0; i < numItems; i++) {
+         Item item = new Item();
+         itemsInRoom.add(item);
+      }
+      for (int j = 0; j < numItems; j++) {
+         Monster monster = new Monster();
+         monstersInRoom.add(monster);
+      }
    }
    
    public String toString() {
       String returnString = "Items in room: ";
+      int a = 0;
+      for (Item b : itemsInRoom) {
+         returnString += itemsInRoom.get(a) + ", ";
+         a++;
+      }
+      returnString += "Monsters in room: ";
+      int c = 0;
+      for (Monster d : monstersInRoom) {
+         returnString += monstersInRoom.get(c) + ", ";
+         c++;
+      }
 
       // TODO: build a returnString that nicely formats the Monsters and Items in the Room
       // HINT: Use a for-each loop to go through the ArrayLists
       return returnString;
    }
-
+   
    }
