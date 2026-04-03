@@ -78,9 +78,15 @@ public class Game {
                   }
                } else {
                   System.out.println("You're trying to move in an invalid direction. Please choose UP, DOWN, LEFT or RIGHT");
-               }/* else if (input.startsWith("GRAB " || "TAKE ")) {
-                  String itemToTake = input.substring(5);*/
+               }
             }
+            else if (input.startsWith("GRAB ") || input.startsWith("TAKE ")) {
+               String itemToTake = input.substring(5);
+               if (dungeonMap.getRoom(p.getCurrentX(), p.getCurrentY()).hasItem(itemToTake)){
+                  p.addItemToInventory(dungeonMap.getRoom(p.getCurrentX(),p.getCurrentY()).getItem(itemToTake));
+                  System.out.println("Inventory: " + p.inventoryContents());
+               }
+            } 
          // TODO: display a message to the user telling them their current coordinates every time they move
        }
    }

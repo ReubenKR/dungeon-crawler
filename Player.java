@@ -22,7 +22,7 @@ public class Player {
 
    public void addItemToInventory(Item item) {
       // TODO: add an item to inventory
-      inventory.add(item);
+         inventory.add(item);
    }
    
    public Item removeItemFromInventory(Item item) {
@@ -40,6 +40,7 @@ public class Player {
       }
    }
    
+
    
    public String look(Map map) {
       // TODO: This method will take the player's current X and Y, and return the contents of the room
@@ -62,5 +63,14 @@ public class Player {
    }
    public int getCurrentY() {
       return currentY;
+   }
+   public String inventoryContents() {
+      String s = "";
+      int a = 0;
+      for (Item value : inventory) {
+      s += inventory.get(a) + ", ";
+      a++;
+      }
+      return s;
    }
 }
