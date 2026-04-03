@@ -85,6 +85,8 @@ public class Game {
                if (dungeonMap.getRoom(p.getCurrentX(), p.getCurrentY()).hasItem(itemToTake)){
                   p.addItemToInventory(dungeonMap.getRoom(p.getCurrentX(),p.getCurrentY()).getItem(itemToTake));
                   System.out.println("Inventory: " + p.inventoryContents());
+               } else {
+                  System.out.println("Not in the room or incorrect spelling");
                }
             } 
          // TODO: display a message to the user telling them their current coordinates every time they move
